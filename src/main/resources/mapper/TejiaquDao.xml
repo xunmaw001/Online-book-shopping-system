@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TejiaquDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TejiaquEntity" id="tejiaquMap">
+        <result property="tushumingcheng" column="tushumingcheng"/>
+        <result property="fenlei" column="fenlei"/>
+        <result property="biaoqian" column="biaoqian"/>
+        <result property="tupian" column="tupian"/>
+        <result property="zuozhe" column="zuozhe"/>
+        <result property="chubanshe" column="chubanshe"/>
+        <result property="faxingriqi" column="faxingriqi"/>
+        <result property="tushujieshao" column="tushujieshao"/>
+        <result property="reversetime" column="reversetime"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TejiaquVO" >
+		SELECT * FROM tejiaqu  tejiaqu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TejiaquVO" >
+		SELECT  tejiaqu.* FROM tejiaqu  tejiaqu
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TejiaquView" >
+
+		SELECT  tejiaqu.* FROM tejiaqu  tejiaqu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TejiaquView" >
+		SELECT * FROM tejiaqu  tejiaqu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
